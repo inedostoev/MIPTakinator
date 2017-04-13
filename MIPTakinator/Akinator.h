@@ -17,14 +17,14 @@ enum Traverse {
 class Akinator
 {
 public:
-					Akinator();
-					~Akinator();
-	FILE			*inputFile_;
-	FILE			*outputFile_;
+                     Akinator();
+                    ~Akinator();
+    FILE            *inputFile_;
+    FILE            *outputFile_;
     
     void            callMenu();
 private:
-	Node			*Tree_;
+    Node            *Tree_;
     char            *scannedStr_;
     char            *questionStr_;
 
@@ -38,8 +38,8 @@ private:
     void            findAnswer(Node* nodePointer);
     bool            scanfAnswer();
     void            addAnswer(Node *nodePointer); 
-	void			searchNode(Node* rootNode, Node** neededNode);
-	void			printDefinition(Node* neededNode, char* dataDaughter);
+    void            searchNode(Node* rootNode, Node** neededNode);
+    void            printDefinition(Node* neededNode, char* dataDaughter);
     bool            checkDaughter(Node* parentNode, char* dataDaughter);
     void            findSimilarity(Node* firstNode, Node* secondNode);
     void            dumpNode(FILE* stream, Node* node);
