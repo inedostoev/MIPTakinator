@@ -1,12 +1,14 @@
+#define _CRT_SECURE_NO_WARNINGS
+#define NDEBUG
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "TREE.h"
+#include <string.h>
+#include "Akinator.h"
 
 int main()
-{
-	TREE s;
-	s.inputFile_ = fopen("configFile.txt", "r");
-	s.outputFile_ = fopen("exit.txt", "w");
-	s.execute();	
+{   
+    Akinator akinator;
+	akinator.callMenu();	
 	return 0;
 }
