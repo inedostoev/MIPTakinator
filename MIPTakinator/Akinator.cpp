@@ -202,16 +202,16 @@ void Akinator::comparison() {
     if(secondNeededNode == NULL) {
         printf("%s не найден\n", scannedStr_);
     }
-    /*
-    if(!strcasecmp(secondNeededNode->data_, firstNeededNode->data_))
-        printf("Все характеристики одинаковы\n");
-    else
-    */
     findSimilarity(firstNeededNode, secondNeededNode);
 }
     
-void Akinator::findSimilarity(Node* firstNode, Node* secondNode) {
-     
+void Akinator::findSimilarity(Node* firstNode, Node* secondNode) { //
+    if (firstNode == NULL || secondNode == NULL) return;
+    if(!strcasecmp(firstNode->data_, secondNode->data_)) {
+        printf("\nСхожие параметры:\n");
+        printf("%s\n", firstNode->data_);
+        findSimilarity(firstNode->parent_, secondNode->parent_);
+    }
 }
 
 void Akinator::writeFile(FILE *outputFile, Node *nodePointer) {
@@ -226,21 +226,53 @@ void Akinator::writeFile(FILE *outputFile, Node *nodePointer) {
 	fprintf(outputFile, ")");
 }
 
-void Akinator::dumpNode(FILE* stream, Node* node) {
-    fprintf(stream, "Node[%p]\n", node);
+void Akinator::dumpTree(FILE* stream, Node* node) {
+    if(node == NULL) return;
+    fprintf(stream, "treeNode[%p]\n", node);
     fprintf(stream, "{\n");
     fprintf(stream, "  parent_ = %p;\n", node->parent_);
-    fprintf(stream, "  data_[%p] = '%s';\n", &(node->data_), node->data_);
+    fprintf(stream, "  data_[%p] = '%s';\n", node->data_, node->data_);
     fprintf(stream, "  left_ = %p;\n", node->left_);
     fprintf(stream, "  right_ = %p;\n", node->right_);
     fprintf(stream, "}\n");
+    dumpTree(stream, node->left_);
+    dumpTree(stream, node->right_);
 }
 
-void Akinator::stdoutDump(Node* node) {
-    if(node == NULL) return;
-    dumpNode(stdout, node);
-    stdoutDump(node->left_);
-    stdoutDump(node->right_);
+void Akinator::dotDump(Node* root) {
+    FILE* ptrFile = fopen("dumpFile.gv", "w");
+    if (ptrFile == NULL) {
+        printf("Error with dumpFile.gv\n");
+        exit(1);
+    }
+    fprintf(ptrFile, "digraph graf {\n");
+    dotNodeDump(root, ptrFile);
+    fprintf(ptrFile, "}");
+    fclose(ptrFile);
+    ptrFile = NULL;
+    system("dot dumpFile.gv -Tpng -o dumpFile.png");
+    system("xdot dumpFile.gv");
+}
+
+void Akinator::dotNodeDump(Node *root, FILE* stream) {
+    fprintf(stream, "treeNode_%p [label=\""
+                    "treeNode_[%p]\\l",
+                    root, root);
+    fprintf(stream, "{\\l");
+    fprintf(stream, "  parent_ [%p]\\l", root->parent_);
+    fprintf(stream, "  data_ [%p] = %s\\l", root->data_, root->data_);
+    fprintf(stream, "  left_ [%p]\\l", root->left_);
+    fprintf(stream, "  right_ [%p]\\l", root->right_); 
+    fprintf(stream, "}\\l");
+    fprintf(stream, "\"]\n");
+    if(root->left_) {
+        fprintf(stream, "treeNode_%p->treeNode_%p\n", root, root->left_);
+        dotNodeDump(root->left_, stream);
+    }
+    if(root->right_) {
+        fprintf(stream, "treeNode_%p->treeNode_%p\n", root, root->right_);
+        dotNodeDump(root->right_, stream);
+    }
 }
 
 void Akinator::visitor(Traverse mode, Node* node, void act(Node*)) {
@@ -250,10 +282,15 @@ void Akinator::visitor(Traverse mode, Node* node, void act(Node*)) {
             act(node);
             visitor(mode, node->right_, act);
             break;
-        case PREORDER:                          //дописать
-                                
+        case PREORDER:                          
+            act(node);
+            visitor(mode, node->left_, act);
+            visitor(mode, node->right_, act);
             break;
         case POSTORDER:
+            visitor(mode, node->right_, act);
+            act(node);
+            visitor(mode, node->left_, act);
             break;
         default:
             printf("Unknown Traverse mode\n");
@@ -284,10 +321,12 @@ void Akinator::scanfCmd() {
         definition();
     }
     if(!strcasecmp(scanfCmd, "c")) {
-        comparison();
+       printf("No work\n");
+       //comparison();
     }
     if(!strcasecmp(scanfCmd, "l")) {
-        stdoutDump(Tree_);
+        dumpTree(stdout, Tree_);
+        dotDump(Tree_);
     }
     if(!strcasecmp(scanfCmd, "q")) {
         exit(1);

@@ -42,8 +42,9 @@ private:
     void            printDefinition(Node* neededNode, char* dataDaughter);
     bool            checkDaughter(Node* parentNode, char* dataDaughter);
     void            findSimilarity(Node* firstNode, Node* secondNode);
-    void            dumpNode(FILE* stream, Node* node);
-    void            stdoutDump(Node* node);
+    void            dumpTree(FILE* stream, Node* node);
+    void            dotDump(Node* root);
+    void            dotNodeDump(Node* root, FILE* stream);
     void            visitor(Traverse mode, Node* node, void act(Node*));
     void            writeFile(FILE *outputFile, Node *nodePointer);
 };
