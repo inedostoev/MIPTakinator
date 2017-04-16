@@ -171,19 +171,17 @@ void Akinator::printDefinition(Node* neededNode, char* daughterNode) {
     }
     else {
         printf("!  %s\n", tmpData);
+
     }
 	printDefinition(neededNode->parent_, neededNode->data_);
 }
 
 bool Akinator::checkDaughter(Node *parentNode, char* dataDaughter) {
-    if(parentNode == NULL) {}
-        else{
-            if(!strcasecmp((parentNode->left_)->data_, dataDaughter)) 
-                return true;
-            if(!strcasecmp((parentNode->right_)->data_, dataDaughter))
-                return false;
-            else printf("Error with checkDaughter\n");
-        }
+        if(!strcasecmp((parentNode->left_)->data_, dataDaughter)) 
+            return true;
+        if(!strcasecmp((parentNode->right_)->data_, dataDaughter))
+            return false;
+        else printf("Error with checkDaughter\n");
 }
 
 void Akinator::comparison() {
@@ -201,16 +199,40 @@ void Akinator::comparison() {
     searchNode(Tree_, &secondNeededNode);
     if(secondNeededNode == NULL) {
         printf("%s не найден\n", scannedStr_);
+        return;
     }
-    findSimilarity(firstNeededNode, secondNeededNode);
+    similarRoot_ = NULL;
+    Node* constPointer = firstNeededNode;
+    findSimilarity(firstNeededNode->parent_, secondNeededNode->parent_, constPointer);
+    if (similarRoot_ == NULL) printf("Error with findSimilarity\n");  
+    if(similarRoot_->parent_ == NULL) {
+        printf("Сходств нет :(\n");
+    }
+    else {
+        printf("Сходства :\n");
+        printComparison(similarRoot_, NULL);
+    }
+    printf("Различия:\n\t%s:\n", firstNeededNode->data_);
+    printComparison(firstNeededNode, similarRoot_);
+    printf("\t%s:\n",secondNeededNode->data_);
+    printComparison(secondNeededNode, similarRoot_);
 }
     
-void Akinator::findSimilarity(Node* firstNode, Node* secondNode) { //
-    if (firstNode == NULL || secondNode == NULL) return;
-    if(!strcasecmp(firstNode->data_, secondNode->data_)) {
-        printf("\nСхожие параметры:\n");
-        printf("%s\n", firstNode->data_);
-        findSimilarity(firstNode->parent_, secondNode->parent_);
+void Akinator::printComparison(Node* similarRoot, Node* condition) {
+    if (similarRoot == condition) return;
+        printDefinition(similarRoot->parent_, similarRoot->data_);
+}
+
+void Akinator::findSimilarity(Node* firstNode, Node* secondNode, Node* constPointer) { 
+    if (firstNode == NULL) return;
+    if (secondNode == NULL) return;
+    if(!strcasecmp(firstNode->data_, secondNode->data_)) {   
+        similarRoot_= firstNode; 
+        return;
+    }
+    if (similarRoot_ == NULL) {
+    findSimilarity(firstNode->parent_, secondNode, constPointer);
+    findSimilarity(constPointer, secondNode->parent_, constPointer);
     }
 }
 
@@ -321,8 +343,7 @@ void Akinator::scanfCmd() {
         definition();
     }
     if(!strcasecmp(scanfCmd, "c")) {
-       printf("No work\n");
-       //comparison();
+       comparison();
     }
     if(!strcasecmp(scanfCmd, "l")) {
         dumpTree(stdout, Tree_);

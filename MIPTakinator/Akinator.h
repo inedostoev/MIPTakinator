@@ -24,9 +24,10 @@ public:
     
     void            callMenu();
 private:
-    Node            *Tree_;
+    Node*           Tree_;
     char            *scannedStr_;
     char            *questionStr_;
+    Node*           similarRoot_;
 
     Node*           buildTree(char* buffer, size_t *counter, Node* Darth_Vader);
 
@@ -41,7 +42,8 @@ private:
     void            searchNode(Node* rootNode, Node** neededNode);
     void            printDefinition(Node* neededNode, char* dataDaughter);
     bool            checkDaughter(Node* parentNode, char* dataDaughter);
-    void            findSimilarity(Node* firstNode, Node* secondNode);
+    void            findSimilarity(Node* firstNode, Node* secondNode, Node* constPointer);
+    void            printComparison(Node* similarRoot, Node* condition);
     void            dumpTree(FILE* stream, Node* node);
     void            dotDump(Node* root);
     void            dotNodeDump(Node* root, FILE* stream);
