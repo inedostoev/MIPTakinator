@@ -18,6 +18,9 @@ inline          Node(Node* parent, char* data);
     char*       data_;
     Node*       left_;
     Node*       right_;
+
+    Node&       operator = (const Node&);
+                Node(const Node&);
 };
 
 Node::Node(Node* parent, char* data) :

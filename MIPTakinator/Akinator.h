@@ -21,11 +21,14 @@ public:
                     ~Akinator();
     FILE            *inputFile_;
     FILE            *outputFile_;
+    Akinator& operator = (const Akinator&);
+    Akinator(const Akinator&);
     
     void            callMenu();
 private:
     Node*           Tree_;
     char            *scannedStr_;
+    char            *answerStr_;
     char            *questionStr_;
     Node*           similarRoot_;
 

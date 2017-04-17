@@ -10,5 +10,5 @@ int main()
 {   
     Akinator akinator;
 	akinator.callMenu();	
-	return 0;
+	return main();
 }

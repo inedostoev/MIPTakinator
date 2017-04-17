@@ -1,55 +1,73 @@
 digraph graf {
-treeNode_0x60300000efe0 [label="treeNode_[0x60300000efe0]\l{\l  parent_ [(nil)]\l  data_ [0x611000009f00] = Это препод по линалу \l  left_ [0x60300000efb0]\l  right_ [0x60300000ee60]\l}\l"]
-treeNode_0x60300000efe0->treeNode_0x60300000efb0
-treeNode_0x60300000efb0 [label="treeNode_[0x60300000efb0]\l{\l  parent_ [0x60300000efe0]\l  data_ [0x611000009dc0] = У него есть шерсть \l  left_ [0x60300000ef80]\l  right_ [0x60300000ef50]\l}\l"]
-treeNode_0x60300000efb0->treeNode_0x60300000ef80
-treeNode_0x60300000ef80 [label="treeNode_[0x60300000ef80]\l{\l  parent_ [0x60300000efb0]\l  data_ [0x611000009c80] = Чубака\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000efb0->treeNode_0x60300000ef50
-treeNode_0x60300000ef50 [label="treeNode_[0x60300000ef50]\l{\l  parent_ [0x60300000efb0]\l  data_ [0x611000009b40] = Он халявный \l  left_ [0x60300000ef20]\l  right_ [0x60300000ee90]\l}\l"]
-treeNode_0x60300000ef50->treeNode_0x60300000ef20
-treeNode_0x60300000ef20 [label="treeNode_[0x60300000ef20]\l{\l  parent_ [0x60300000ef50]\l  data_ [0x611000009a00] = Он пиздатый \l  left_ [0x60300000eef0]\l  right_ [0x60300000eec0]\l}\l"]
-treeNode_0x60300000ef20->treeNode_0x60300000eef0
-treeNode_0x60300000eef0 [label="treeNode_[0x60300000eef0]\l{\l  parent_ [0x60300000ef20]\l  data_ [0x6110000098c0] = Жестков\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ef20->treeNode_0x60300000eec0
-treeNode_0x60300000eec0 [label="treeNode_[0x60300000eec0]\l{\l  parent_ [0x60300000ef20]\l  data_ [0x611000009780] = Умнов\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ef50->treeNode_0x60300000ee90
-treeNode_0x60300000ee90 [label="treeNode_[0x60300000ee90]\l{\l  parent_ [0x60300000ef50]\l  data_ [0x611000009640] = Бек\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000efe0->treeNode_0x60300000ee60
-treeNode_0x60300000ee60 [label="treeNode_[0x60300000ee60]\l{\l  parent_ [0x60300000efe0]\l  data_ [0x611000009500] = Это преподаватель по матану \l  left_ [0x60300000ee30]\l  right_ [0x60300000ed40]\l}\l"]
-treeNode_0x60300000ee60->treeNode_0x60300000ee30
-treeNode_0x60300000ee30 [label="treeNode_[0x60300000ee30]\l{\l  parent_ [0x60300000ee60]\l  data_ [0x6110000093c0] = Добрый семинарист?\l  left_ [0x60300000ee00]\l  right_ [0x60300000edd0]\l}\l"]
-treeNode_0x60300000ee30->treeNode_0x60300000ee00
-treeNode_0x60300000ee00 [label="treeNode_[0x60300000ee00]\l{\l  parent_ [0x60300000ee30]\l  data_ [0x611000009280] = Бабушка\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ee30->treeNode_0x60300000edd0
-treeNode_0x60300000edd0 [label="treeNode_[0x60300000edd0]\l{\l  parent_ [0x60300000ee30]\l  data_ [0x611000009140] = Ходит в кардигане?\l  left_ [0x60300000eda0]\l  right_ [0x60300000ed70]\l}\l"]
-treeNode_0x60300000edd0->treeNode_0x60300000eda0
-treeNode_0x60300000eda0 [label="treeNode_[0x60300000eda0]\l{\l  parent_ [0x60300000edd0]\l  data_ [0x611000009000] = Штепин\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000edd0->treeNode_0x60300000ed70
-treeNode_0x60300000ed70 [label="treeNode_[0x60300000ed70]\l{\l  parent_ [0x60300000edd0]\l  data_ [0x611000008ec0] = Иванова\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ee60->treeNode_0x60300000ed40
-treeNode_0x60300000ed40 [label="treeNode_[0x60300000ed40]\l{\l  parent_ [0x60300000ee60]\l  data_ [0x611000008d80] = Препод по английскому \l  left_ [0x60300000ed10]\l  right_ [0x60300000ece0]\l}\l"]
-treeNode_0x60300000ed40->treeNode_0x60300000ed10
-treeNode_0x60300000ed10 [label="treeNode_[0x60300000ed10]\l{\l  parent_ [0x60300000ed40]\l  data_ [0x611000008c40] = Целикова Ольга Николаевна\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ed40->treeNode_0x60300000ece0
-treeNode_0x60300000ece0 [label="treeNode_[0x60300000ece0]\l{\l  parent_ [0x60300000ed40]\l  data_ [0x611000008b00] = Лектор по общефизу\l  left_ [0x60300000ecb0]\l  right_ [0x60300000ec20]\l}\l"]
-treeNode_0x60300000ece0->treeNode_0x60300000ecb0
-treeNode_0x60300000ecb0 [label="treeNode_[0x60300000ecb0]\l{\l  parent_ [0x60300000ece0]\l  data_ [0x6110000089c0] = Скучный лектор по общефизу \l  left_ [0x60300000ec80]\l  right_ [0x60300000ec50]\l}\l"]
-treeNode_0x60300000ecb0->treeNode_0x60300000ec80
-treeNode_0x60300000ec80 [label="treeNode_[0x60300000ec80]\l{\l  parent_ [0x60300000ecb0]\l  data_ [0x611000008880] = Булыгин\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ecb0->treeNode_0x60300000ec50
-treeNode_0x60300000ec50 [label="treeNode_[0x60300000ec50]\l{\l  parent_ [0x60300000ecb0]\l  data_ [0x611000008740] = Овчинкин\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ece0->treeNode_0x60300000ec20
-treeNode_0x60300000ec20 [label="treeNode_[0x60300000ec20]\l{\l  parent_ [0x60300000ece0]\l  data_ [0x611000008600] = Гандон \l  left_ [0x60300000ebf0]\l  right_ [0x60300000ebc0]\l}\l"]
-treeNode_0x60300000ec20->treeNode_0x60300000ebf0
-treeNode_0x60300000ebf0 [label="treeNode_[0x60300000ebf0]\l{\l  parent_ [0x60300000ec20]\l  data_ [0x6110000084c0] = Желтоухов\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ec20->treeNode_0x60300000ebc0
-treeNode_0x60300000ebc0 [label="treeNode_[0x60300000ebc0]\l{\l  parent_ [0x60300000ec20]\l  data_ [0x611000008380] = Тупая пизда \l  left_ [0x60300000eb90]\l  right_ [0x60300000eb60]\l}\l"]
-treeNode_0x60300000ebc0->treeNode_0x60300000eb90
-treeNode_0x60300000eb90 [label="treeNode_[0x60300000eb90]\l{\l  parent_ [0x60300000ebc0]\l  data_ [0x611000008240] = Черкасова\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000ebc0->treeNode_0x60300000eb60
-treeNode_0x60300000eb60 [label="treeNode_[0x60300000eb60]\l{\l  parent_ [0x60300000ebc0]\l  data_ [0x611000008100] = Лучший ментор \l  left_ [0x60300000eb30]\l  right_ [0x60300000eb00]\l}\l"]
-treeNode_0x60300000eb60->treeNode_0x60300000eb30
-treeNode_0x60300000eb30 [label="treeNode_[0x60300000eb30]\l{\l  parent_ [0x60300000eb60]\l  data_ [0x611000007fc0] = Фил я знал что ты сюда дойдешь\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
-treeNode_0x60300000eb60->treeNode_0x60300000eb00
-treeNode_0x60300000eb00 [label="treeNode_[0x60300000eb00]\l{\l  parent_ [0x60300000eb60]\l  data_ [0x611000007e80] = Петушков\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d660 [label="treeNode_[0x60300000d660]\l{\l  parent_ [(nil)]\l  data_ [0x61100001cb00] = Это препод по линалу?\l  left_ [0x60300000d630]\l  right_ [0x60300000d4e0]\l}\l"]
+treeNode_0x60300000d660->treeNode_0x60300000d630
+treeNode_0x60300000d630 [label="treeNode_[0x60300000d630]\l{\l  parent_ [0x60300000d660]\l  data_ [0x61100001c9c0] = У него есть шерсть?\l  left_ [0x60300000d600]\l  right_ [0x60300000d5d0]\l}\l"]
+treeNode_0x60300000d630->treeNode_0x60300000d600
+treeNode_0x60300000d600 [label="treeNode_[0x60300000d600]\l{\l  parent_ [0x60300000d630]\l  data_ [0x61100001c880] = Чубака\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d630->treeNode_0x60300000d5d0
+treeNode_0x60300000d5d0 [label="treeNode_[0x60300000d5d0]\l{\l  parent_ [0x60300000d630]\l  data_ [0x61100001c740] = Он халявный?\l  left_ [0x60300000d5a0]\l  right_ [0x60300000d510]\l}\l"]
+treeNode_0x60300000d5d0->treeNode_0x60300000d5a0
+treeNode_0x60300000d5a0 [label="treeNode_[0x60300000d5a0]\l{\l  parent_ [0x60300000d5d0]\l  data_ [0x61100001c600] = Он лучший?\l  left_ [0x60300000d570]\l  right_ [0x60300000d540]\l}\l"]
+treeNode_0x60300000d5a0->treeNode_0x60300000d570
+treeNode_0x60300000d570 [label="treeNode_[0x60300000d570]\l{\l  parent_ [0x60300000d5a0]\l  data_ [0x61100001c4c0] = Жестков\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d5a0->treeNode_0x60300000d540
+treeNode_0x60300000d540 [label="treeNode_[0x60300000d540]\l{\l  parent_ [0x60300000d5a0]\l  data_ [0x61100001c380] = Умнов\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d5d0->treeNode_0x60300000d510
+treeNode_0x60300000d510 [label="treeNode_[0x60300000d510]\l{\l  parent_ [0x60300000d5d0]\l  data_ [0x61100001c240] = Бек\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d660->treeNode_0x60300000d4e0
+treeNode_0x60300000d4e0 [label="treeNode_[0x60300000d4e0]\l{\l  parent_ [0x60300000d660]\l  data_ [0x61100001c100] = Это преподаватель по матану?\l  left_ [0x60300000d4b0]\l  right_ [0x60300000d360]\l}\l"]
+treeNode_0x60300000d4e0->treeNode_0x60300000d4b0
+treeNode_0x60300000d4b0 [label="treeNode_[0x60300000d4b0]\l{\l  parent_ [0x60300000d4e0]\l  data_ [0x61100001bfc0] = Добрый семинарист?\l  left_ [0x60300000d480]\l  right_ [0x60300000d3f0]\l}\l"]
+treeNode_0x60300000d4b0->treeNode_0x60300000d480
+treeNode_0x60300000d480 [label="treeNode_[0x60300000d480]\l{\l  parent_ [0x60300000d4b0]\l  data_ [0x61100001be80] = Своеобразно разговаривает?\l  left_ [0x60300000d450]\l  right_ [0x60300000d420]\l}\l"]
+treeNode_0x60300000d480->treeNode_0x60300000d450
+treeNode_0x60300000d450 [label="treeNode_[0x60300000d450]\l{\l  parent_ [0x60300000d480]\l  data_ [0x61100001bd40] = Бурцев\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d480->treeNode_0x60300000d420
+treeNode_0x60300000d420 [label="treeNode_[0x60300000d420]\l{\l  parent_ [0x60300000d480]\l  data_ [0x61100001bc00] = Бабушка\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d4b0->treeNode_0x60300000d3f0
+treeNode_0x60300000d3f0 [label="treeNode_[0x60300000d3f0]\l{\l  parent_ [0x60300000d4b0]\l  data_ [0x61100001bac0] = Ходит в кардигане?\l  left_ [0x60300000d3c0]\l  right_ [0x60300000d390]\l}\l"]
+treeNode_0x60300000d3f0->treeNode_0x60300000d3c0
+treeNode_0x60300000d3c0 [label="treeNode_[0x60300000d3c0]\l{\l  parent_ [0x60300000d3f0]\l  data_ [0x61100001b980] = Штепин\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d3f0->treeNode_0x60300000d390
+treeNode_0x60300000d390 [label="treeNode_[0x60300000d390]\l{\l  parent_ [0x60300000d3f0]\l  data_ [0x61100001b840] = Иванова\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d4e0->treeNode_0x60300000d360
+treeNode_0x60300000d360 [label="treeNode_[0x60300000d360]\l{\l  parent_ [0x60300000d4e0]\l  data_ [0x61100001b700] = Препод по английскому?\l  left_ [0x60300000d330]\l  right_ [0x60300000d300]\l}\l"]
+treeNode_0x60300000d360->treeNode_0x60300000d330
+treeNode_0x60300000d330 [label="treeNode_[0x60300000d330]\l{\l  parent_ [0x60300000d360]\l  data_ [0x61100001b5c0] = Целикова Ольга Николаевна\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d360->treeNode_0x60300000d300
+treeNode_0x60300000d300 [label="treeNode_[0x60300000d300]\l{\l  parent_ [0x60300000d360]\l  data_ [0x61100001b480] = Лектор по общефизу\l  left_ [0x60300000d2d0]\l  right_ [0x60300000d240]\l}\l"]
+treeNode_0x60300000d300->treeNode_0x60300000d2d0
+treeNode_0x60300000d2d0 [label="treeNode_[0x60300000d2d0]\l{\l  parent_ [0x60300000d300]\l  data_ [0x61100001b340] = Скучный лектор по общефизу?\l  left_ [0x60300000d2a0]\l  right_ [0x60300000d270]\l}\l"]
+treeNode_0x60300000d2d0->treeNode_0x60300000d2a0
+treeNode_0x60300000d2a0 [label="treeNode_[0x60300000d2a0]\l{\l  parent_ [0x60300000d2d0]\l  data_ [0x61100001b200] = Булыгин\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d2d0->treeNode_0x60300000d270
+treeNode_0x60300000d270 [label="treeNode_[0x60300000d270]\l{\l  parent_ [0x60300000d2d0]\l  data_ [0x61100001b0c0] = Овчинкин\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d300->treeNode_0x60300000d240
+treeNode_0x60300000d240 [label="treeNode_[0x60300000d240]\l{\l  parent_ [0x60300000d300]\l  data_ [0x61100001af80] = Гандон?\l  left_ [0x60300000d210]\l  right_ [0x60300000d1e0]\l}\l"]
+treeNode_0x60300000d240->treeNode_0x60300000d210
+treeNode_0x60300000d210 [label="treeNode_[0x60300000d210]\l{\l  parent_ [0x60300000d240]\l  data_ [0x61100001ae40] = Желтоухов\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d240->treeNode_0x60300000d1e0
+treeNode_0x60300000d1e0 [label="treeNode_[0x60300000d1e0]\l{\l  parent_ [0x60300000d240]\l  data_ [0x61100001ad00] = Наша лабница?\l  left_ [0x60300000d1b0]\l  right_ [0x60300000d180]\l}\l"]
+treeNode_0x60300000d1e0->treeNode_0x60300000d1b0
+treeNode_0x60300000d1b0 [label="treeNode_[0x60300000d1b0]\l{\l  parent_ [0x60300000d1e0]\l  data_ [0x61100001abc0] = Черкасова\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d1e0->treeNode_0x60300000d180
+treeNode_0x60300000d180 [label="treeNode_[0x60300000d180]\l{\l  parent_ [0x60300000d1e0]\l  data_ [0x61100001aa80] = Лучший ментор?\l  left_ [0x60300000d150]\l  right_ [0x60300000d120]\l}\l"]
+treeNode_0x60300000d180->treeNode_0x60300000d150
+treeNode_0x60300000d150 [label="treeNode_[0x60300000d150]\l{\l  parent_ [0x60300000d180]\l  data_ [0x61100001a940] = Фил я знал что ты сюда дойдешь\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d180->treeNode_0x60300000d120
+treeNode_0x60300000d120 [label="treeNode_[0x60300000d120]\l{\l  parent_ [0x60300000d180]\l  data_ [0x61100001a800] = Лектор по инфе?\l  left_ [0x60300000d0f0]\l  right_ [0x60300000d000]\l}\l"]
+treeNode_0x60300000d120->treeNode_0x60300000d0f0
+treeNode_0x60300000d0f0 [label="treeNode_[0x60300000d0f0]\l{\l  parent_ [0x60300000d120]\l  data_ [0x61100001a6c0] = 
+Ведет iLab?\l  left_ [0x60300000d0c0]\l  right_ [0x60300000d090]\l}\l"]
+treeNode_0x60300000d0f0->treeNode_0x60300000d0c0
+treeNode_0x60300000d0c0 [label="treeNode_[0x60300000d0c0]\l{\l  parent_ [0x60300000d0f0]\l  data_ [0x61100001a580] = Дед\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d0f0->treeNode_0x60300000d090
+treeNode_0x60300000d090 [label="treeNode_[0x60300000d090]\l{\l  parent_ [0x60300000d0f0]\l  data_ [0x61100001a440] = 
+Ужасно рассказывает?\l  left_ [0x60300000d060]\l  right_ [0x60300000d030]\l}\l"]
+treeNode_0x60300000d090->treeNode_0x60300000d060
+treeNode_0x60300000d060 [label="treeNode_[0x60300000d060]\l{\l  parent_ [0x60300000d090]\l  data_ [0x61100001a300] = Коротин\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d090->treeNode_0x60300000d030
+treeNode_0x60300000d030 [label="treeNode_[0x60300000d030]\l{\l  parent_ [0x60300000d090]\l  data_ [0x61100001a1c0] = Северов\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
+treeNode_0x60300000d120->treeNode_0x60300000d000
+treeNode_0x60300000d000 [label="treeNode_[0x60300000d000]\l{\l  parent_ [0x60300000d120]\l  data_ [0x61100001a080] = Петушков\l  left_ [(nil)]\l  right_ [(nil)]\l}\l"]
 }

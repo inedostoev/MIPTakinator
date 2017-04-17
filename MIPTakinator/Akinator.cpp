@@ -1,5 +1,3 @@
-#define _CRT_SECURE_NO_WARNINGS
-
 #include "Akinator.h"
 
 Akinator::Akinator() :
@@ -25,8 +23,9 @@ Akinator::Akinator() :
 	}
     free(buffer);
     scannedStr_ = (char*)calloc(MAX_QN_LENGTH, sizeof(char));
+    answerStr_ = (char*)calloc(MAX_QN_LENGTH, sizeof(char));
     questionStr_ = (char*)calloc(MAX_QN_LENGTH, sizeof(char));
-	if (buffer == NULL || scannedStr_ == NULL || questionStr_ == NULL) {
+	if (buffer == NULL || scannedStr_ == NULL || questionStr_ == NULL || answerStr_ == NULL) {
 		printf("Can't allocate memory\n");
 		exit(1);
 	}
@@ -36,7 +35,9 @@ Akinator::Akinator() :
 Akinator::~Akinator() {
     delete Tree_;
     Tree_ = NULL; 
-    scannedStr_ = questionStr_ = NULL;
+    free(answerStr_);
+    free(questionStr_);
+    answerStr_ = scannedStr_ = questionStr_ = NULL;
 }
 
 //Darth_Vader = parent;
@@ -50,7 +51,9 @@ Node *Akinator::buildTree(char* buffer, size_t *counter, Node* Darth_Vader) {
     (*counter)++;
     int len = -1;
     char* data = (char*)malloc(MAX_QN_LENGTH * sizeof(char));
-    assert(data != NULL); //
+    if (data == NULL) {
+        printf("Can't allocate memory\n");
+    }
     sscanf(buffer + (*counter), "%[^(]%n", data, &len);
     (*counter) += (size_t)len;
     Node* Luke = new Node(Darth_Vader, data);
@@ -78,8 +81,6 @@ void Akinator::findAnswer(Node* nodePointer) {
     if(nodePointer->left_ == NULL && nodePointer->right_ == NULL) {
         if(answer == true) {
             printf("Ура, я угадал\n"); 
-            free(scannedStr_);
-            free(questionStr_);
         }
         if(answer == false) {
             addAnswer(nodePointer);
@@ -98,12 +99,12 @@ void Akinator::findAnswer(Node* nodePointer) {
 void Akinator::addAnswer(Node* nodePointer) {						 
     printf("Упс, не знаю такого, давай внесем его в базу\n");
     printf("Введи преподавателя, которого загадали\n");
-    scanf("%s", scannedStr_);
+    scanf("%s", answerStr_);
     printf("Введи отличительную черту от преподавателя по фамилии %s. В конце обязательно поставь вопрос\n", nodePointer->data_);
     int count = -1;
     scanf("%[^?]%n", questionStr_, &count);
     questionStr_[count] = '?';    
-    nodePointer->left_ = new Node(nodePointer, scannedStr_);
+    nodePointer->left_ = new Node(nodePointer, answerStr_);
     nodePointer->right_ = new Node(nodePointer, nodePointer->data_);
     nodePointer->data_ = questionStr_;
     outputFile_ = fopen("configFile.txt", "w");
@@ -161,7 +162,7 @@ void Akinator::searchNode(Node* rootNode, Node** neededNode) {
 }
 
 void Akinator::printDefinition(Node* neededNode, char* daughterNode) {
-	if (neededNode == NULL) return;
+	if (neededNode == NULL) return; 
     char *tmpData = neededNode->data_;
     for (int i = 0; tmpData[i] != '\0'; i++) {
         if (tmpData[i] == '?') tmpData[i] = ' ';           
@@ -171,7 +172,6 @@ void Akinator::printDefinition(Node* neededNode, char* daughterNode) {
     }
     else {
         printf("!  %s\n", tmpData);
-
     }
 	printDefinition(neededNode->parent_, neededNode->data_);
 }
@@ -181,7 +181,6 @@ bool Akinator::checkDaughter(Node *parentNode, char* dataDaughter) {
             return true;
         if(!strcasecmp((parentNode->right_)->data_, dataDaughter))
             return false;
-        else printf("Error with checkDaughter\n");
 }
 
 void Akinator::comparison() {
@@ -212,10 +211,10 @@ void Akinator::comparison() {
         printf("Сходства :\n");
         printComparison(similarRoot_, NULL);
     }
-    printf("Различия:\n\t%s:\n", firstNeededNode->data_);
-    printComparison(firstNeededNode, similarRoot_);
-    printf("\t%s:\n",secondNeededNode->data_);
-    printComparison(secondNeededNode, similarRoot_);
+    //printf("Различия:\n\t%s:\n", firstNeededNode->data_);
+    //printComparison(firstNeededNode, similarRoot_);
+    //printf("\t%s:\n",secondNeededNode->data_);
+    //printComparison(secondNeededNode, similarRoot_);
 }
     
 void Akinator::printComparison(Node* similarRoot, Node* condition) {
@@ -332,7 +331,7 @@ void Akinator::callMenu() {
 void Akinator::scanfCmd() {
     printf("\n");
     char *scanfCmd = (char*)calloc(64, sizeof(char));
-    scanf("%s", scanfCmd);
+    scanf("%63s", scanfCmd);
     if(!strcasecmp(scanfCmd, "p")) {
         printf("Я хочу поиграть с тобой в одну игру\n");
         printf("Загадай преподавателя из физтеха\n");
@@ -356,5 +355,5 @@ void Akinator::scanfCmd() {
         printf("Команда не распознана, попробуй еще\n");
     }
     free(scanfCmd);
-    callMenu();
+  //  callMenu();
 }
