@@ -181,6 +181,8 @@ bool Akinator::checkDaughter(Node *parentNode, char* dataDaughter) {
             return true;
         if(!strcasecmp((parentNode->right_)->data_, dataDaughter))
             return false;
+
+	return false;
 }
 
 void Akinator::comparison() {
